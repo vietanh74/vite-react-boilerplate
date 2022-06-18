@@ -1,12 +1,13 @@
 import { resolve } from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
+import svgr from '@honkhonk/vite-plugin-svgr';
 
 export default ({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, './') };
 
   return defineConfig({
-    plugins: [react()],
+    plugins: [react(), svgr()],
     css: {
       preprocessorOptions: {
         less: {

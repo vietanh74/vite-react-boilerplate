@@ -1,5 +1,5 @@
-import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ConfigProvider } from 'antd';
 import locale from 'antd/lib/locale/vi_VN';
@@ -11,13 +11,13 @@ import 'antd/dist/antd.less';
 import './assets/styles/app.scss';
 
 const Application = (
-  <React.StrictMode>
-    <Provider store={store}>
+  <Provider store={store}>
+    <BrowserRouter>
       <ConfigProvider locale={locale}>
         <App />
       </ConfigProvider>
-    </Provider>
-  </React.StrictMode>
+    </BrowserRouter>
+  </Provider>
 );
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
