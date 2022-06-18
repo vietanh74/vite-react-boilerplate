@@ -2,17 +2,12 @@ import { lazy } from 'react';
 import { RouteObject } from 'react-router-dom';
 
 import DefaultLayout from '@/layouts/default';
-// import { MainLayout } from '@/shared/layouts';
+import NoHeaderLayout from '@/layouts/noHeader';
 import Homepage from '@/modules/homepage';
-
-interface IRoute extends RouteObject {
-  layout?: string;
-  children?: IRoute[];
-}
 
 const About = lazy(() => import('@/modules/about'));
 
-export const routes: IRoute[] = [
+export const routes: RouteObject[] = [
   {
     path: '/',
     element: <DefaultLayout />,
@@ -20,12 +15,17 @@ export const routes: IRoute[] = [
       {
         path: '/',
         element: <Homepage />,
-        layout: 'noHeader',
       },
     ],
   },
   {
-    path: 'about',
-    element: <About />,
+    path: '/',
+    element: <NoHeaderLayout />,
+    children: [
+      {
+        path: 'about',
+        element: <About />,
+      },
+    ],
   },
 ];
