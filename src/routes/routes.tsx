@@ -9,7 +9,6 @@ const About = lazy(() => import('@/modules/about'));
 
 export const routes: RouteObject[] = [
   {
-    path: '/',
     element: <DefaultLayout />,
     children: [
       {
@@ -19,7 +18,6 @@ export const routes: RouteObject[] = [
     ],
   },
   {
-    path: '/',
     element: <NoHeaderLayout />,
     children: [
       {
