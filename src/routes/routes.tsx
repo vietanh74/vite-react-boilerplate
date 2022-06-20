@@ -9,6 +9,10 @@ const About = lazy(() => import('@/modules/about'));
 
 export const routes: RouteObject[] = [
   {
+    path: '*',
+    element: <h1>Not found</h1>,
+  },
+  {
     element: <DefaultLayout />,
     children: [
       {
