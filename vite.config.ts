@@ -24,5 +24,8 @@ export default ({ mode }) => {
     server: {
       port: parseInt(process.env.VITE_APP_PORT) || 3000,
     },
+    esbuild: {
+      logOverride: { 'this-is-undefined-in-esm': 'silent' },
+    },
   });
 };

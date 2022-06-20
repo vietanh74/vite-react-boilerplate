@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 
 const DefaultLayout = () => {
   useEffect(() => {
-    console.log('render');
+    console.log('render layout');
   }, []);
 
   return (
